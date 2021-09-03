@@ -6,4 +6,4 @@ before_install:
   - docker build -t kaustav1808/simpleweb -f dockerfile.dev .
 
 script:
-  - docker run kaustav1808/simpleweb npm run test -- --coverage  
+  - docker run -e CI=true kaustav1808/simpleweb npm run test -- --coverage  
