@@ -7,3 +7,18 @@ before_install:
 
 script:
   - docker run -e CI=true kaustav1808/simpleweb npm run test -- --coverage  
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "Dockersimpleweb"
+  environment: "Dockersimpleweb-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-037966023887"
+  bucket_path: "Dockersimpleweb"
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_accesss_key:
+    secure: "$AWS_SECRET_KEY"
+
+    
