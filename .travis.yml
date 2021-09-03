@@ -11,10 +11,10 @@ script:
 deploy:
   provider: elasticbeanstalk
   region: "ap-south-1"
-  app: "dockersimpleweb"
+  app: "docker-simpleweb"
   environment: "dockersimpleweb-env"
   bucket_name: "elasticbeanstalk-ap-south-1-037966023887"
-  bucket_path: "dockersimpleweb"
+  bucket_path: "docker-simpleweb"
   on:
     branch: main
   access_key_id: $AWS_ACCESS_KEY
